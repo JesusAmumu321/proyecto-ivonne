@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run start:react\" \"wait-on http://localhost:3000 && npm run start:electron\"",
-    "start:react": "react-scripts start --port 4000",
+    "start:react": "react-scripts start",
     "start:electron": "electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "wait-on": "^9.0.1"
   }
 }
