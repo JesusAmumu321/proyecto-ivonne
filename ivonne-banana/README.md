@@ -1,135 +1,70 @@
-# 🍌 Proyecto Ivonne Banana
+# Getting Started with Create React App
 
-Proyecto web con HTML, Tailwind CSS, JavaScript, servidor Express y Firebase 🔥
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 📋 Requisitos
+## Available Scripts
 
-- Node.js (versión 14 o superior)
-- npm (viene con Node.js)
-- Cuenta de Firebase (gratis)
+In the project directory, you can run:
 
-## 🚀 Instalación
+### `npm start`
 
-```bash
-# Las dependencias ya están instaladas, pero si necesitas reinstalarlas:
-npm install
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🔥 Configurar Firebase
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-**¡IMPORTANTE!** Antes de ejecutar el proyecto, debes configurar Firebase:
+### `npm test`
 
-1. Lee la guía completa en: **[FIREBASE_SETUP.md](./FIREBASE_SETUP.md)**
-2. Crea tu proyecto en [Firebase Console](https://console.firebase.google.com/)
-3. Copia tus credenciales y actualiza `public/js/firebase-config.js`
-4. Habilita Firestore Database y Authentication (Anonymous)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Ver guía paso a paso: **[FIREBASE_SETUP.md](./FIREBASE_SETUP.md)** 📖
+### `npm run build`
 
-## 🎨 Compilar Tailwind CSS
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```bash
-# Compilar una vez
-npm run build:css
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-# O modo watch (recompila automáticamente al hacer cambios)
-npm run watch:css
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## 🖥️ Iniciar el servidor
+### `npm run eject`
 
-```bash
-# Iniciar servidor Express
-npm start
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# O usar el comando dev
-npm run dev
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-El servidor estará disponible en: **http://localhost:3000**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 📁 Estructura del Proyecto
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```
-ivonne-banana/
-├── public/                 # Archivos públicos
-│   ├── index.html         # Página principal
-│   ├── js/
-│   │   ├── app.js         # JavaScript principal
-│   │   └── firebase-config.js  # Configuración de Firebase
-│   └── styles/
-│       └── output.css     # CSS compilado de Tailwind
-├── src/
-│   └── input.css          # CSS fuente de Tailwind
-├── server.js              # Servidor Express
-├── tailwind.config.js     # Configuración de Tailwind
-├── FIREBASE_SETUP.md      # 🔥 Guía de configuración de Firebase
-├── .env.example           # Ejemplo de variables de entorno
-└── package.json           # Dependencias y scripts
-```
+## Learn More
 
-## 🛠️ Tecnologías Utilizadas
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- **HTML5**: Estructura de la página
-- **Tailwind CSS**: Framework de estilos utility-first
-- **JavaScript ES6+**: Interactividad del frontend (módulos ES6)
-- **Express.js**: Servidor web backend
-- **Node.js**: Entorno de ejecución
-- **Firebase**: Backend as a Service
-  - **Firestore**: Base de datos NoSQL en tiempo real
-  - **Firebase Auth**: Autenticación de usuarios
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## 📡 API Endpoints
+### Code Splitting
 
-- `GET /` - Página principal
-- `GET /api/status` - Estado del servidor
-- `GET /api/saludo/:nombre` - Saludo personalizado
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## 👥 Páginas del Sistema de Usuarios
+### Analyzing the Bundle Size
 
-- `/registro.html` - Formulario de registro de usuarios
-- `/usuarios.html` - Lista de usuarios registrados
-- `/index.html` - Página principal con acceso a todo
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Ver documentación completa: **[USUARIOS_SISTEMA.md](./USUARIOS_SISTEMA.md)**
+### Making a Progressive Web App
 
-## 🎯 Características
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- ✅ Diseño responsive con Tailwind CSS
-- ✅ Servidor Express funcional
-- ✅ JavaScript interactivo con módulos ES6
-- ✅ API REST básica
-- ✅ Verificación de estado del servidor en tiempo real
-- ✅ 🔥 Integración completa con Firebase
-- ✅ Base de datos Firestore para guardar mensajes
-- ✅ Autenticación anónima de usuarios
-- ✅ Actualizaciones en tiempo real
-- ✅ 👥 **Sistema completo de usuarios con:**
-  - Registro con validación
-  - Autenticación con correo y contraseña
-  - Almacenamiento en Firestore
-  - Lista visual de usuarios
-  - Perfil completo (nombre, apellido, correo, edad, descripción)
+### Advanced Configuration
 
-## 📝 Comandos Disponibles
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-- `npm start` - Inicia el servidor
-- `npm run dev` - Inicia el servidor en modo desarrollo
-- `npm run build:css` - Compila Tailwind CSS una vez
-- `npm run watch:css` - Compila Tailwind CSS en modo watch
+### Deployment
 
-## 🎨 Personalización
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Para modificar los estilos de Tailwind, edita:
-- `tailwind.config.js` - Configuración de Tailwind
-- `src/input.css` - Estilos personalizados
+### `npm run build` fails to minify
 
-Después de hacer cambios, ejecuta `npm run build:css` para recompilar.
-
-## 🤝 Autor
-
-Proyecto Ivonne - Jesus-work
-
----
-
-¡Disfruta desarrollando! 🚀
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

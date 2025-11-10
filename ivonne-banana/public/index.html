@@ -1,91 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Ivonne Banana</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/styles/output.css" rel="stylesheet">
-</head>
-<body class="bg-gradient-to-br from-primarioUno to-secundarioDos min-h-screen font-poppins">
-    <div class="container mx-auto px-4 py-8">
-        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-2xl p-8">
-            <h1 class="text-4xl font-bold text-center text-primarioDos mb-6">
-                🍌 Bienvenido a Ivonne Banana
-            </h1>
-            
-            <div class="mb-6">
-                <p class="text-gray-600 text-center mb-4">
-                    Proyecto con HTML, Tailwind CSS, JavaScript y Firebase 🔥
-                </p>
-                
-                <div class="flex justify-center gap-4 mb-6">
-                    <button id="btnSaludar" class="bg-primarioUno hover:bg-primarioDos text-white font-bold py-2 px-4 rounded transition duration-300">
-                        Saludar
-                    </button>
-                    <button id="btnCambiarColor" class="bg-auxiliarUno hover:bg-auxiliarDos text-white font-bold py-2 px-4 rounded transition duration-300">
-                        Cambiar Color
-                    </button>
-                    <button id="btnGuardarFirebase" class="bg-secundarioUno hover:bg-secundarioDos text-primarioDos font-bold py-2 px-4 rounded transition duration-300">
-                        💾 Guardar en Firebase
-                    </button>
-                </div>
-                
-                <div id="mensaje" class="text-center text-lg font-semibold text-gray-700 mb-4">
-                    <!-- Aquí aparecerán los mensajes -->
-                </div>
-                
-                <div class="bg-gray-100 rounded-lg p-4 mb-4">
-                    <h2 class="text-xl font-bold mb-2 text-primarioDos">Estado del Servidor</h2>
-                    <p id="serverStatus" class="text-primarioUno font-semibold">✓ Conectado</p>
-                </div>
-                
-                <div class="bg-secundarioUno bg-opacity-30 rounded-lg p-4 mb-4">
-                    <h2 class="text-xl font-bold mb-2 text-primarioDos">🔥 Estado de Firebase</h2>
-                    <p id="firebaseStatus" class="text-gray-600">Inicializando...</p>
-                    <p id="authStatus" class="text-sm text-gray-500 mt-1"></p>
-                </div>
-                
-                <div class="bg-primarioUno bg-opacity-20 rounded-lg p-4">
-                    <h2 class="text-xl font-bold mb-2 text-primarioDos">📝 Mensajes guardados</h2>
-                    <div id="mensajesGuardados" class="space-y-2 max-h-48 overflow-y-auto">
-                        <!-- Aquí se cargarán los mensajes de Firebase -->
-                    </div>
-                    <button id="btnCargarMensajes" class="mt-3 bg-primarioDos hover:bg-primarioUno text-white font-semibold py-1 px-3 rounded text-sm transition duration-300">
-                        🔄 Recargar mensajes
-                    </button>
-                </div>
-            </div>
-            
-            <div class="border-t pt-6">
-                <h3 class="text-lg font-semibold mb-2">Características:</h3>
-                <ul class="list-disc list-inside space-y-1 text-gray-600">
-                    <li>HTML5 Moderno</li>
-                    <li>Tailwind CSS para estilos</li>
-                    <li>JavaScript Vanilla (ES6 Modules)</li>
-                    <li>Servidor Express</li>
-                    <li>🔥 Firebase (Firestore + Auth)</li>
-                    <li>👥 Sistema de usuarios completo</li>
-                </ul>
-                
-                <!-- Enlaces de navegación -->
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="/login" class="bg-secundarioUno hover:bg-secundarioDos text-primarioDos font-semibold py-2 px-4 rounded-lg transition duration-300 inline-block text-center">
-                        ➕ Registrar Usuario
-                    </a>
-                    <a href="/usuarios.html" class="bg-primarioUno hover:bg-primarioDos text-white font-semibold py-2 px-4 rounded-lg transition duration-300 inline-block text-center">
-                        👥 Ver Usuarios
-                    </a>
-                    <a href="/stats" class="bg-auxiliarUno hover:bg-auxiliarDos text-primarioDos font-semibold py-2 px-4 rounded-lg transition duration-300 inline-block text-center">
-                        📊 Estadísticas
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script type="module" src="/js/app.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
