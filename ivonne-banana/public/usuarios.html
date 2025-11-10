@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios - Ivonne Banana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/styles/output.css" rel="stylesheet">
+</head>
+<body class="bg-black min-h-screen font-poppins">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="max-w-4xl mx-auto mb-8">
+            <div class="bg-white rounded-lg shadow-xl p-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-800">
+                            👥 Lista de Usuarios
+                        </h1>
+                        <p class="text-gray-600 mt-1">
+                            Usuarios registrados en Ivonne Banana
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Total de usuarios:</p>
+                        <p id="totalUsuarios" class="text-3xl font-bold text-purple-600">0</p>
+                    </div>
+                </div>
+                
+                <!-- Botones de navegación -->
+                <div class="mt-4 flex gap-3">
+                    <button 
+                        id="btnRecargar"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                        🔄 Recargar
+                    </button>
+                    <a 
+                        href="/registro.html"
+                        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 inline-block">
+                        ➕ Nuevo Usuario
+                    </a>
+                    <a 
+                        href="/index.html"
+                        class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 inline-block">
+                        ← Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <div class="max-w-4xl mx-auto">
+            <div id="listaUsuarios" class="space-y-4">
+                <!-- Los usuarios se cargarán aquí -->
+            </div>
+            
+            <!-- Mensaje de carga -->
+            <div id="mensajeCarga" class="bg-white rounded-lg shadow-xl p-8 text-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
+                <p class="text-gray-600">Cargando usuarios...</p>
+            </div>
+            
+            <!-- Mensaje vacío -->
+            <div id="mensajeVacio" class="hidden bg-white rounded-lg shadow-xl p-8 text-center">
+                <p class="text-gray-600 text-lg mb-4">No hay usuarios registrados aún</p>
+                <a 
+                    href="/registro.html"
+                    class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 inline-block">
+                    Registrar primer usuario
+                </a>
+            </div>
+        </div>
+
+        <!-- Estado de Firebase -->
+        <div class="max-w-4xl mx-auto mt-6">
+            <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-white">
+                <p class="text-sm">
+                    🔥 Firebase: <span id="firebaseStatus">Conectando...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/lista-usuarios.js"></script>
+</body>
+</html>
