@@ -13,6 +13,16 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Ruta de estadísticas
+app.get('/stats', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'stats.html'));
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'registro.html'));
+});
+
+
 // API de ejemplo
 app.get('/api/status', (req, res) => {
     res.json({
