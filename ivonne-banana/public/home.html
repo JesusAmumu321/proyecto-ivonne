@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivonne Banana - Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #98BE91;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .title {
+            color: #5B7257;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            color: #5B7257;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            opacity: 0.8;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background-color: #5B7257;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 15px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .nav-btn:hover {
+            background-color: #DBCAFF;
+            color: #5B7257;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-btn.secondary {
+            background-color: rgba(91, 114, 87, 0.2);
+            color: #5B7257;
+            border: 2px solid #5B7257;
+        }
+
+        .nav-btn.secondary:hover {
+            background-color: #5B7257;
+            color: white;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(91, 114, 87, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 3px solid #5B7257;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            color: #5B7257;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            color: rgba(91, 114, 87, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+
+            .nav-buttons {
+                width: 100%;
+            }
+
+            .nav-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-text">🍌</span>
+            </div>
+        </div>
+
+        <h1 class="title">Ivonne Banana</h1>
+        <p class="subtitle">Tu aplicación de productividad personal</p>        <nav class="nav-buttons">
+            <a href="/profile" class="nav-btn">
+                Ver Perfil
+            </a>
+            <a href="/create-tasks" class="nav-btn">
+                Crear Tarea
+            </a>
+            <a href="/stats" class="nav-btn secondary">
+                Estadísticas
+            </a>
+            <a href="/test-api" class="nav-btn secondary">
+                🧪 Test API
+            </a>
+        </nav>
+    </div>
+
+    <div class="footer">
+        Ivonne Banana App © 2024
+    </div>
+
+    <script>
+        // Simple navigation tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Add some visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+
+        // Add some hover effects for better UX
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>

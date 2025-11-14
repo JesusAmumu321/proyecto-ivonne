@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API - Ivonne Banana</title>
+    <link rel="stylesheet" href="styles/output.css">
+</head>
+<body class="bg-primarioUno min-h-screen p-8 font-poppins">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-white text-3xl font-bold mb-8">🧪 Test API de Usuario</h1>
+        
+        <!-- Test Buttons -->
+        <div class="bg-white rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">Pruebas de API</h2>
+            <div class="flex flex-wrap gap-4">
+                <button onclick="testGetUser()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    📊 Obtener Usuario
+                </button>
+                <button onclick="testCreateUser()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    ➕ Crear Usuario Test
+                </button>
+                <button onclick="testUpdateUser()" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                    ✏️ Actualizar Usuario
+                </button>
+                <button onclick="clearResults()" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                    🗑️ Limpiar
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="bg-white rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-4">Resultados</h2>
+            <pre id="results" class="bg-gray-100 p-4 rounded text-sm overflow-auto max-h-96">
+Presiona un botón para probar la API...
+            </pre>
+        </div>
+
+        <!-- Sample Data -->
+        <div class="bg-white rounded-lg p-6 mt-6">
+            <h2 class="text-xl font-bold mb-4">📋 Estructura de Datos</h2>
+            <pre class="bg-gray-100 p-4 rounded text-sm overflow-auto">
+{
+  "datos": {
+    "nombreUsuario": "string",
+    "edad": "number",
+    "correoElectronico": "string"
+  },
+  "estadisticas": {
+    "experiencia": "number",
+    "diamantes": "number", 
+    "monedas": "number",
+    "nivel": "number"
+  },
+  "tareas": {
+    "pendientes": "number",
+    "enProceso": "number", 
+    "terminadas": "number",
+    "total": "number"
+  }
+}
+            </pre>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-6 text-center">
+            <a href="/profile" class="bg-primarioDos text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-80 mr-4">
+                👤 Ir al Perfil
+            </a>
+            <a href="/" class="bg-secundarioDos text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-80">
+                🏠 Inicio
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const results = document.getElementById('results');
+        const baseURL = window.location.origin;
+
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            results.textContent += `[${timestamp}] ${message}\n`;
+            results.scrollTop = results.scrollHeight;
+        }
+
+        function clearResults() {
+            results.textContent = 'Resultados limpios...\n';
+        }
+
+        async function testGetUser() {
+            log('🔄 Obteniendo datos del usuario...');
+            try {
+                const response = await fetch(`${baseURL}/api/user/default`);
+                const data = await response.json();
+                log('✅ Usuario obtenido:');
+                log(JSON.stringify(data, null, 2));
+            } catch (error) {
+                log(`❌ Error: ${error.message}`);
+            }
+        }
+
+        async function testCreateUser() {
+            log('🔄 Creando usuario de prueba...');
+            
+            const testData = {
+                nombreUsuario: `TestUser_${Math.floor(Math.random() * 1000)}`,
+                edad: Math.floor(Math.random() * 30) + 20,
+                correoElectronico: `test${Math.floor(Math.random() * 1000)}@example.com`,
+                experiencia: Math.floor(Math.random() * 1000),
+                diamantes: Math.floor(Math.random() * 50),
+                monedas: Math.floor(Math.random() * 200),
+                nivel: Math.floor(Math.random() * 10) + 1,
+                pendientes: Math.floor(Math.random() * 5),
+                enProceso: Math.floor(Math.random() * 3),
+                terminadas: Math.floor(Math.random() * 20)
+            };
+
+            try {
+                const response = await fetch(`${baseURL}/api/test-user`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                const data = await response.json();
+                log('✅ Usuario creado:');
+                log(JSON.stringify(data, null, 2));
+            } catch (error) {
+                log(`❌ Error: ${error.message}`);
+            }
+        }
+
+        async function testUpdateUser() {
+            log('🔄 Actualizando usuario...');
+            
+            const updateData = {
+                nombreUsuario: `UpdatedUser_${Math.floor(Math.random() * 1000)}`,
+                edad: 30,
+                correoElectronico: "updated@example.com",
+                experiencia: 1500,
+                diamantes: 75,
+                monedas: 350,
+                nivel: 20,
+                pendientes: 2,
+                enProceso: 1,
+                terminadas: 50
+            };
+
+            try {
+                const response = await fetch(`${baseURL}/api/user/default`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updateData)
+                });
+                
+                const data = await response.json();
+                log('✅ Usuario actualizado:');
+                log(JSON.stringify(data, null, 2));
+            } catch (error) {
+                log(`❌ Error: ${error.message}`);
+            }
+        }
+
+        // Test inicial
+        document.addEventListener('DOMContentLoaded', function() {
+            log('🚀 API Test página cargada');
+            log('Servidor corriendo en: ' + baseURL);
+        });
+    </script>
+</body>
+</html>
